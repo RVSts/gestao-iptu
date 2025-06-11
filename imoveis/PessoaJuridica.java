@@ -5,12 +5,12 @@ public class PessoaJuridica extends Responsavel {
   private int anoFundacao;
 
   public PessoaJuridica(String nome, String cnpj, int anoFundacao) {
-      this.nome = nome;
+      super(nome);
       this.cnpj = formatar(cnpj);
       this.anoFundacao = anoFundacao;
   }
 
-  public String formatar(String cnpj) {
+  private String formatar(String cnpj) {
             // Valida se o CNPJ tem 14 dígitos
    if (cnpj.length() == 14) {
             return String.format("%s.%s.%s/%s-%s", cnpj.substring(0, 2), cnpj.substring(2, 5),
