@@ -3,7 +3,7 @@ Exercício de Programação Orientada Objetos em Java com aplicação de Heranç
 
 ## Membros
 
-Breno Sales Conceição
-Pedro Marcos Nery Estrela Cordeiro
-Rian Vasconcelos dos Santos
-Yuri Medeiros de Sousa
+Breno Sales Conceição: Responsável pelo TesteImoveis e pela classe Apartamento
+Pedro Marcos Nery Estrela Cordeiro: Responsável pelas classes Imóvel e Casa;
+Rian Vasconcelos dos Santos: Responsável pela classe Prefeitura.
+Yuri Medeiros de Sousa: Responsável pelas classes Terreno e Responsável.
