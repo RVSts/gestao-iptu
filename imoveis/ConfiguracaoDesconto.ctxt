@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=ConfiguracaoDesconto
+comment1.params=idadeMinima1\ percentualDesconto1\ idadeMinima2\ percentualDesconto2
+comment1.target=ConfiguracaoDesconto(int,\ double,\ int,\ double)
+comment2.params=
+comment2.target=int\ getIdadeMinima1()
+comment3.params=
+comment3.target=double\ getPercentualDesconto1()
+comment4.params=
+comment4.target=int\ getIdadeMinima2()
+comment5.params=
+comment5.target=double\ getPercentualDesconto2()
+numComments=6

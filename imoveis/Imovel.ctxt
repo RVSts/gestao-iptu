@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Imovel
+comment1.params=rua\ numero\ bairro\ valorAvaliacao\ responsavel
+comment1.target=Imovel(java.lang.String,\ int,\ java.lang.String,\ double,\ Responsavel)
+comment2.params=
+comment2.target=double\ calcularIPTU()
+comment3.params=
+comment3.target=java.lang.String\ getRua()
+comment4.params=
+comment4.target=int\ getNumero()
+comment5.params=
+comment5.target=java.lang.String\ getBairro()
+comment6.params=
+comment6.target=double\ getValorAvaliacao()
+comment7.params=
+comment7.target=Responsavel\ getResponsavel()
+comment8.params=
+comment8.target=java.lang.String\ descricaoDetalhada()
+numComments=9
