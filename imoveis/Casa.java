@@ -25,8 +25,7 @@ public class Casa extends Imovel {
 
     @Override
     public String descricaoDetalhada() {
-        return "Endereço: " + getEndereco() +
-               ". Área construída: " + areaConstruida + "m², área do terreno: " + areaTerreno + "m². Valor de avaliação: R$" +
-               String.format("%.2f", getValorAvaliacao());
+        return super.descricaoDetalhada() + 
+               ". Área construída: " + areaConstruida + "m², área do terreno: " + areaTerreno + "m².";
     }
 }
