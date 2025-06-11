@@ -7,6 +7,8 @@ public abstract class Responsavel {
         this.nome = nome;
     }
 
+    private abstract String formatar(String string);
+    
     public String getNome() {
         return nome;
     }
