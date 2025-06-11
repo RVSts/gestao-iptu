@@ -2,13 +2,9 @@ package imoveis;
 
 public class Responsavel {
     private String nome;
-    private String cpf;
-    private int idade;
 
-    public Responsavel(String nome, String cpf, int idade) {
+    public Responsavel(String nome) {
         this.nome = nome;
-        this.cpf = cpf;
-        this.idade = idade;
     }
 
     public String getNome() {
@@ -19,19 +15,5 @@ public class Responsavel {
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
+    public abstract String formatar(); // formataçao dos codigos identificadores para cada classe, forçando a implementação
 }
