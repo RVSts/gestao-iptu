@@ -29,7 +29,6 @@ public class Apartamento extends Imovel {
 
     @Override
     public String descricaoDetalhada() {
-        return "Apartamento no andar " + andar + ", localizado no Endereco" + getEndereco() + ". Área privativa: " + areaPrivativa + "m². Valor de avaliação: R$" +
-               String.format("%.2f", getValorAvaliacao());
+        return super.descricaoDetalhada() + "Apartamento no andar " + andar + ". Área privativa: " + areaPrivativa + "m².";
     }
 }
