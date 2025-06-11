@@ -17,7 +17,7 @@ public class Prefeitura {
     }
     
     public double calcularIPTUComDesconto(Imovel imovel) {
-        if (imovel instanceof Terreno) {
+        if (imovel instanceof Terreno || imovel instanceof PontoComercial) {
             return imovel.calcularIPTU();
         }
         
