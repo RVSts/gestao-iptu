@@ -32,7 +32,10 @@ public abstract class Imovel {
     
     public void setResponsavel(Responsavel responsavel) { this.responsavel = responsavel; }
 
-    public abstract String descricaoDetalhada();
+    public String descricaoDetalhada(){
+        return "Responsável: " + responsavel.getNome() +"Endereço: " + getEndereco()+ ". Valor de avaliação: R$" +
+               String.format("%.2f", getValorAvaliacao());
+    }
 
     public String relatorioResumo(double iptuFinal) {
         return "Responsável: " + responsavel.getNome() + " - IPTU final: R$" + 
