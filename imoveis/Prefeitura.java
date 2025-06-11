@@ -24,10 +24,10 @@ public class Prefeitura {
         int idade = imovel.getResponsavel().getIdade();
         double iptu = imovel.calcularIPTU();
 
-        if (idade >= configDesconto.getIdadeMinima2()) {
-            return iptu * (1 - configDesconto.getPercentualDesconto2() / 100.0);
-        } else if (idade >= configDesconto.getIdadeMinima1()) {
-            return iptu * (1 - configDesconto.getPercentualDesconto1() / 100.0);
+        if (idade >= 75) {
+            return iptu * (1 - 0.15);
+        } else if (idade >= 60) {
+            return iptu * (1 - 0.1);
         } else {
             return iptu;
         }
@@ -43,6 +43,7 @@ public class Prefeitura {
     
     public double calcularTotalIPTUComDesconto() {
         double total = 0;
+
         for (Imovel imovel : imoveis) {
             total += calcularIPTUComDesconto(imovel);
         }
