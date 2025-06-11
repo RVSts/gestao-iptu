@@ -4,8 +4,8 @@ public class Apartamento extends Imovel {
     private int andar;
     private double areaPrivativa;
 
-    public Apartamento(String rua, int numero, String bairro, double valorAvaliacao, Responsavel responsavel, int andar, double areaPrivativa) {
-        super(rua, numero, bairro, valorAvaliacao, responsavel);
+    public Apartamento(String endereco, double valorAvaliacao, Responsavel responsavel, int andar, double areaPrivativa) {
+        super(endereco, valorAvaliacao, responsavel);
         this.andar = andar;
         this.areaPrivativa = areaPrivativa;
     }
@@ -29,8 +29,7 @@ public class Apartamento extends Imovel {
 
     @Override
     public String descricaoDetalhada() {
-        return "Apartamento no andar " + andar + ", localizado na rua " + getRua() + ", nº " + getNumero() +
-               ", bairro " + getBairro() + ". Área privativa: " + areaPrivativa + "m². Valor de avaliação: R$" +
+        return "Apartamento no andar " + andar + ", localizado no Endereco" + getEndereco() + ". Área privativa: " + areaPrivativa + "m². Valor de avaliação: R$" +
                String.format("%.2f", getValorAvaliacao());
     }
 }

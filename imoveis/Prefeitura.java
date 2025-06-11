@@ -15,7 +15,24 @@ public class Prefeitura {
     public void adicionarImovel(Imovel imovel) {
         imoveis.add(imovel);
     }
+    
+    public double calcularIPTUComDesconto(Imovel imovel) {
+        if (imovel instanceof Terreno) {
+            return imovel.calcularIPTU();
+        }
+        
+        int idade = imovel.getResponsavel().getIdade();
+        double iptu = imovel.calcularIPTU();
 
+        if (idade >= configDesconto.getIdadeMinima2()) {
+            return iptu * (1 - configDesconto.getPercentualDesconto2() / 100.0);
+        } else if (idade >= configDesconto.getIdadeMinima1()) {
+            return iptu * (1 - configDesconto.getPercentualDesconto1() / 100.0);
+        } else {
+            return iptu;
+        }
+    }
+    
     public double calcularTotalIPTUSemDesconto() {
         double total = 0;
         for (Imovel imovel : imoveis) {
@@ -23,11 +40,11 @@ public class Prefeitura {
         }
         return total;
     }
-
+    
     public double calcularTotalIPTUComDesconto() {
         double total = 0;
         for (Imovel imovel : imoveis) {
-            total += imovel.calcularIPTUComDesconto(configDesconto);
+            total += calcularIPTUComDesconto(imovel);
         }
         return total;
     }
@@ -42,7 +59,8 @@ public class Prefeitura {
     public void exibirRelatoriosResumidos() {
         System.out.println("\n--- RELATÓRIOS RESUMIDOS DE IPTU ---");
         for (Imovel imovel : imoveis) {
-            System.out.println(imovel.relatorioResumo(configDesconto));
+            double iptuFinal = calcularIPTUComDesconto(imovel);
+            System.out.println(imovel.relatorioResumo(iptuFinal));
         }
     }
 }

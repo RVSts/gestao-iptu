@@ -3,8 +3,8 @@ package imoveis;
 public class Terreno extends Imovel {
     private double areaTotal;
 
-    public Terreno(String rua, int numero, String bairro, double valorAvaliacao, Responsavel responsavel, double areaTotal) {
-        super(rua, numero, bairro, valorAvaliacao, responsavel);
+    public Terreno(String endereco, double valorAvaliacao, Responsavel responsavel, double areaTotal) {
+        super(endereco, valorAvaliacao, responsavel);
         this.areaTotal = areaTotal;
     }
 
@@ -19,7 +19,7 @@ public class Terreno extends Imovel {
 
     @Override
     public String descricaoDetalhada() {
-        return "Terreno na rua " + getRua() + ", nº " + getNumero() + ", bairro " + getBairro() +
+        return "Endereço: " + getEndereco() +
                ". Área total: " + areaTotal + "m². Valor de avaliação: R$" + String.format("%.2f", getValorAvaliacao());
     }
 }

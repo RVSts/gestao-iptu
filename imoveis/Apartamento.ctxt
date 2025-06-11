@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Apartamento
-comment1.params=rua\ numero\ bairro\ valorAvaliacao\ responsavel\ andar\ areaPrivativa
-comment1.target=Apartamento(java.lang.String,\ int,\ java.lang.String,\ double,\ Responsavel,\ int,\ double)
+comment1.params=endereco\ valorAvaliacao\ responsavel\ andar\ areaPrivativa
+comment1.target=Apartamento(java.lang.String,\ double,\ Responsavel,\ int,\ double)
 comment2.params=
 comment2.target=int\ getAndar()
 comment3.params=
