@@ -12,7 +12,7 @@ public class PessoaFisica extends Responsavel{
     }
 
     @Override
-    public String formatar(String cpf) {
+    private String formatar(String cpf) {
             // Valida se o CPF tem 11 dígitos
             if (cpf.length() == 11) {
                 return String.format("%s.%s.%s-%s", cpf.substring(0, 3), cpf.substring(3, 6),
