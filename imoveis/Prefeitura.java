@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Prefeitura {
-    private ConfiguracaoDesconto configDesconto;
     private List<Imovel> imoveis;
 
-    public Prefeitura(ConfiguracaoDesconto configDesconto) {
+    public Prefeitura() {
         this.configDesconto = configDesconto;
         this.imoveis = new ArrayList<>();
     }
