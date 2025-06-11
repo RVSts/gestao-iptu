@@ -19,7 +19,7 @@ public class Terreno extends Imovel {
 
     @Override
     public String descricaoDetalhada() {
-        return "Endereço: " + getEndereco() +
-               ". Área total: " + areaTotal + "m². Valor de avaliação: R$" + String.format("%.2f", getValorAvaliacao());
+        return super.descricaoDetalhada() + 
+               ". Área total: " + areaTotal + "m².";
     }
 }
