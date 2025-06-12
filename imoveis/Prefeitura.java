@@ -4,35 +4,53 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Prefeitura {
-    private ConfiguracaoDesconto configDesconto;
     private List<Imovel> imoveis;
+    private List<PessoaFisica> pessoasFisicas;
+    private List<PessoaJuridica> pessoasJuridicas;
 
-    public Prefeitura(ConfiguracaoDesconto configDesconto) {
-        this.configDesconto = configDesconto;
+    public Prefeitura() {
         this.imoveis = new ArrayList<>();
+        this.pessoasFisicas = new ArrayList<>();
+        this.pessoasJuridicas = new ArrayList<>();
     }
 
     public void adicionarImovel(Imovel imovel) {
         imoveis.add(imovel);
     }
-    
+
+    public void adicionarPessoaFisica(PessoaFisica pessoaFisica)
+    {
+        pessoasFisicas.add(pessoaFisica);
+    }
+
+    public void adicionarPessoaJuridica(PessoaJuridica pessoaJuridica)
+    {
+        pessoasJuridicas.add(pessoaJuridica);
+    }
+
     public double calcularIPTUComDesconto(Imovel imovel) {
-        if (imovel instanceof Terreno) {
+        if (imovel instanceof Terreno || imovel instanceof PontoComercial) {
             return imovel.calcularIPTU();
         }
-        
-        int idade = imovel.getResponsavel().getIdade();
-        double iptu = imovel.calcularIPTU();
 
-        if (idade >= 75) {
-            return iptu * (1 - 0.15);
-        } else if (idade >= 60) {
-            return iptu * (1 - 0.1);
-        } else {
-            return iptu;
-        }
+        Responsavel responsavel = imovel.getResponsavel();
+
+         if (responsavel instanceof PessoaFisica) {
+             PessoaFisica pessoaFisica = (PessoaFisica) responsavel;
+             int idade = pessoaFisica.getIdade();
+             double iptu = imovel.calcularIPTU();
+
+             if (idade >= 75){
+                 return iptu * 0.85;
+             } else if (idade >= 60) {
+                 return iptu * 0.90;
+             } else {
+                 return iptu;
+             }
+         }
+         return imovel.calcularIPTU();
     }
-    
+
     public double calcularTotalIPTUSemDesconto() {
         double total = 0;
         for (Imovel imovel : imoveis) {
@@ -64,4 +82,8 @@ public class Prefeitura {
             System.out.println(imovel.relatorioResumo(iptuFinal));
         }
     }
+
+    public List<PessoaFisica> getPessoasFisicas() { return pessoasFisicas; }
+    public List<PessoaJuridica> getPessoasJuridicas() { return pessoasJuridicas; }
+    public List<Imovel> getImoveis() { return imoveis;}
 }
